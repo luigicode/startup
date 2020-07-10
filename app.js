@@ -37,9 +37,9 @@ app.use(
 );
 
 //logging
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV === "development") {
+//   app.use(morgan("dev"));
+// }
 
 //hamburger helpers
 const {
@@ -97,7 +97,7 @@ app.use("/stories", require("./routes/stories"));
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(
-  PORT,
-  console.log(`server running in ${process.env.NODE_ENV} mode on ${PORT}`)
-);
+// "start": "cross-env NODE_ENV=production node app",
+// "dev": "cross-env NODE_ENV=development nodemon app"
+// ${process.env.NODE_ENV} mode
+app.listen(PORT, console.log(`server running on ${PORT}`));
