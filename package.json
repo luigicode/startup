@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "SSC",
   "main": "app.js",
-  "scripts": {
-    
-    "start": "node app.js",
-    "dev": "nodemon app.js"
-  },
   "author": "Luigi Isberto",
   "license": "ISC",
   "repository": "github.com/luigicode/startup.git",

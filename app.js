@@ -36,6 +36,12 @@ app.use(
   })
 );
 
+// "scripts": {
+
+//   "start": "node app.js",
+//   "dev": "nodemon app.js"
+// },
+
 //logging
 // if (process.env.NODE_ENV === "development") {
 //   app.use(morgan("dev"));
@@ -95,9 +101,9 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/stories", require("./routes/stories"));
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 // "start": "cross-env NODE_ENV=production node app",
 // "dev": "cross-env NODE_ENV=development nodemon app"
 // ${process.env.NODE_ENV} mode
-app.listen(PORT, console.log(`server running on ${PORT}`));
+// app.listen(PORT, console.log(`server running on ${PORT}`));
