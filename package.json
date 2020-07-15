@@ -26,6 +26,6 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
     "dev": "cross-env NODE_ENV=development nodemon app",
-    "build": "node app.js"
+    "build": "react-scripts build"
   }
 }
