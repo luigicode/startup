@@ -105,5 +105,5 @@ const PORT = process.env.PORT || 3000;
 
 // "start": "cross-env NODE_ENV=production node app",
 // "dev": "cross-env NODE_ENV=development nodemon app"
-// ${process.env.NODE_ENV} mode
-// app.listen(PORT, console.log(`server running on ${PORT}`));
+ ${process.env.NODE_ENV} mode
+ app.listen(PORT, console.log(`server running on ${PORT}`));
