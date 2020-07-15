@@ -42,7 +42,7 @@ app.use(
 //   "dev": "nodemon app.js"
 // },
 
-logging;
+// logging;
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
