@@ -42,10 +42,10 @@ app.use(
 //   "dev": "nodemon app.js"
 // },
 
-//logging
-// if (process.env.NODE_ENV === "development") {
-//   app.use(morgan("dev"));
-// }
+logging;
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 //hamburger helpers
 const {
