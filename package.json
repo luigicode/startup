@@ -32,7 +32,7 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app",
+    "start": "react-scripts start",
     "dev": "cross-env NODE_ENV=development nodemon app",
     "build": "react-scripts build"
   },
