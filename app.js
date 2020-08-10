@@ -10,6 +10,8 @@ const passport = require("passport");
 const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
 
+console.log("App success");
+
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
@@ -18,14 +20,14 @@ require("./config/passport")(passport);
 
 connectDB();
 
-const app = express();
+const App = express();
 
 //body parser
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+App.use(express.urlencoded({ extended: false }));
+App.use(express.json());
 
 //methodOverride
-app.use(
+App.use(
   methodOverride(function (req, res) {
     if (req.body && typeof req.body === "object" && "_method" in req.body) {
       // look in urlencoded POST bodies and delete it
@@ -38,13 +40,13 @@ app.use(
 
 // "scripts": {
 
-//   "start": "node app.js",
-//   "dev": "nodemon app.js"
+//   "start": "node App.js",
+//   "dev": "nodemon App.js"
 // },
 
 // logging;
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+  App.use(morgan("dev"));
 }
 
 //hamburger helpers
@@ -57,7 +59,7 @@ const {
 } = require("./helpers/hbs");
 
 // handlebars
-app.engine(
+App.engine(
   ".hbs",
   exphbs({
     helpers: {
@@ -71,10 +73,10 @@ app.engine(
     extname: ".hbs",
   })
 );
-app.set("view engine", "hbs");
+App.set("view engine", "hbs");
 
 //session middleware
-app.use(
+App.use(
   session({
     secret: "kelaidliner shawrtz",
     resave: false,
@@ -84,28 +86,33 @@ app.use(
 );
 
 //passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+App.use(passport.initialize());
+App.use(passport.session());
 
 //set g var
-app.use(function (req, res, next) {
+App.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
 
 //static
-app.use(express.static(path.join(__dirname, "public")));
+App.use(express.static(path.join(__dirname, "public")));
 
 //Routes
-app.use("/", require("./routes/index"));
-app.use("/auth", require("./routes/auth"));
-app.use("/stories", require("./routes/stories"));
+App.use("/", require("./routes/Start"));
+App.use("/auth", require("./routes/auth"));
+App.use("/stories", require("./routes/stories"));
+
+// App.use(express.static(path.join(__dirname, "build")));
+// App.get("/", function (req, res) {
+//   res.sendFile(path.join(__dirname, "build"));
+// });
 
 const PORT = process.env.PORT || 3000;
 
-// "start": "cross-env NODE_ENV=production node app",
-// "dev": "cross-env NODE_ENV=development nodemon app"
-app.listen(
+// "start": "cross-env NODE_ENV=production node App",
+// "dev": "cross-env NODE_ENV=development nodemon App"
+App.listen(
   PORT,
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );

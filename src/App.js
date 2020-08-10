@@ -1,17 +1,9 @@
-// import { Switch, Route } from "react-router-dom";
+import React from "react";
 
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Switch>
-//         <Route exact path="/" component={Home} />
-//         <Route exact path="/rooms/" component={Rooms} />
-//         <Route exact path="/rooms/:slug" component={SingleRoom} />
-//         <Route component={Error} />
-//       </Switch>
-//     </>
-//   );
-// }
+import App from "./App";
 
-// export default App;
+function aPp(res) {
+  return res.render(<App />);
+}
+
+export default aPp;

@@ -2,7 +2,7 @@
   "name": "startup",
   "version": "1.0.0",
   "description": "SSC",
-  "main": "app.js",
+  "main": "App.js",
   "author": "Luigi Isberto",
   "license": "ISC",
   "repository": "github.com/luigicode/startup.git",
@@ -16,6 +16,7 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "moment": "^2.27.0",
+    "mongodb-client-encryption": "^1.1.0",
     "mongoose": "^5.9.22",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
@@ -24,6 +25,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "request": "^2.88.2",
+    "server": "^1.0.30",
     "test-integrity": "^2.0.1"
   },
   "devDependencies": {
@@ -32,8 +35,8 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "cross-env NODE_ENV=development nodemon app",
+    "dev": "cross-env NODE_ENV=development nodemon App",
+    "start": "cross-env NODE_ENV=production node app",
     "build": "react-scripts build"
   },
   "browserslist": {
